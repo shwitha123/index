@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumbnail Image Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        .main-image {
+            width: 600px;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .thumbnails {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            max-width: 800px;
+            overflow: auto;
+        }
+        .thumbnails img {
+            width: 100px;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .thumbnails img:hover {
+            transform: scale(1.1);
+            border-color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Thumbnail Image Viewer</h2>
+    <div class="gallery-container">
+        <!-- Main Image -->
+        <img id="mainImg" class="main-image" src="image_01.jpg" alt="Main Image">
+
+        <!-- Thumbnails -->
+        <div class="thumbnails">
+            <img src="image_01.jpg" alt="Thumbnail 1" onclick="changeImage('image_01.jpg')">
+            <img src="image_02.jpg" alt="Thumbnail 2" onclick="changeImage('image_02.jpg')">
+            <img src="image_03.jpg" alt="Thumbnail 3" onclick="changeImage('image_03.jpg')">
+            <img src="image_04.jpg" alt="Thumbnail 4" onclick="changeImage('image_04.jpg')">
+            <img src="aa5.jpg" alt="Thumbnail 5" onclick="changeImage('aa5.jpg')">
+            <img src="xxx.jpg" alt="Thumbnail 6" onclick="changeImage('xxx.jpg')">
+            
+        </div>
+    </div>
+
+    <script>
+        function changeImage(imageSrc) {
+            document.getElementById('mainImg').src = imageSrc;
+        }
+    </script>
+
+</body>
+</html>
